@@ -21,5 +21,13 @@ namespace LocalAndExternalAuthAPI.Controllers
             var result = await userService.RegisterAsync(model);
             return Ok(result);
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> LoginAsync(LoginModel model)
+        {
+            var result = await userService.LoginAsync(model);
+
+            return Ok(result);
+        }
     }
 }

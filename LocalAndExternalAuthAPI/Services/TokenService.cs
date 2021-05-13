@@ -25,35 +25,8 @@ namespace LocalAndExternalAuthAPI.Services
             this.jwt = jwt.Value;
         }
 
-        public async Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model)
-        {
-            var authenticationModel = new AuthenticationModel();
-            var user = await userManager.FindByEmailAsync(model.Email);
-
-            if (user == null)
-            {
-                authenticationModel.IsAuthenticated = false;
-                authenticationModel.Message = $"No accounts registered with {model.Email}";
-                return authenticationModel;
-            }
-
-            if(await userManager.CheckPasswordAsync(user, model.Password))
-            {
-                authenticationModel.Message = $"Hello {user.UserName}";
-                authenticationModel.IsAuthenticated = true;
-                JwtSecurityToken jwtSecurityToken = await CreateJwtToken(user);
-                authenticationModel.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-                authenticationModel.Email = user.Email;
-                authenticationModel.UserName = user.UserName;
-                var rolesList = await userManager.GetRolesAsync(user).ConfigureAwait(false);
-                authenticationModel.Roles = rolesList.ToList();
-                return authenticationModel;
-            }
-
-            authenticationModel.IsAuthenticated = false;
-            authenticationModel.Message = $"Incorrect credentials for user {user.Email}";
-            return authenticationModel;
-        }
+        public async Task<string> GetTokenAsync(ApplicationUser user) =>
+            new JwtSecurityTokenHandler().WriteToken(await CreateJwtToken(user));
 
         private async Task<JwtSecurityToken> CreateJwtToken(ApplicationUser user)
         {

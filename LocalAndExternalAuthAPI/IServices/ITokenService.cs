@@ -5,6 +5,6 @@ namespace LocalAndExternalAuthAPI.IServices
 {
     public interface ITokenService
     {
-        Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
+        Task<string> GetTokenAsync(ApplicationUser user);
     }
 }

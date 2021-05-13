@@ -14,13 +14,15 @@ namespace LocalAndExternalAuthAPI.Services
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly JWT jwt;
+        private readonly ITokenService tokenService;
 
-        public UserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt)
+        public UserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt, ITokenService tokenService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.roleManager = roleManager;
             this.jwt = jwt.Value;
+            this.tokenService = tokenService;
         }
 
         public async Task<string> RegisterAsync(RegisterModel model)
@@ -43,6 +45,18 @@ namespace LocalAndExternalAuthAPI.Services
                     return error.Description; // Simplified variant of ModelState errors
 
             return $"User {user.UserName} was successfully registered";
+        }
+
+        public async Task<string> LoginAsync(LoginModel model)
+        {
+            var user = await userManager.FindByEmailAsync(model.Email);
+
+            if (user == null) return "User not found";
+
+            if (await userManager.CheckPasswordAsync(user, model.Password))
+                return await tokenService.GetTokenAsync(user);
+
+            return $"Incorrect credentials for user {user.Email}";
         }
     }
 }

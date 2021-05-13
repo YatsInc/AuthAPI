@@ -9,9 +9,11 @@ namespace LocalAndExternalAuthAPI.Controllers
     public class SecuredController : ControllerBase
     {
         [HttpGet]
-        public IActionResult GetSecuredData()
-        {
-            return Ok("This Secured Data is available only for Authenticated Users.");
-        }
+        public IActionResult GetSecuredData() =>
+            Ok("This Secured Data is available only for Authenticated Users.");
+
+        [HttpPost]
+        public IActionResult PostSecuredData() =>
+            Ok("This Secured Data is available only for Authenticated Users.");
     }
 }
