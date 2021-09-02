@@ -1,4 +1,4 @@
-﻿namespace LocalAndExternalAuthAPI.Settings
+﻿namespace AuthAPI.Settings
 {
     public class JWT
     {

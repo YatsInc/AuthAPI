@@ -1,10 +1,10 @@
-﻿using LocalAndExternalAuthAPI.Constants;
-using LocalAndExternalAuthAPI.Models;
+﻿using AuthAPI.Constants;
+using AuthAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LocalAndExternalAuthAPI.Data
+namespace AuthAPI.Data
 {
     public class ApplicationDbContextSeed
     {

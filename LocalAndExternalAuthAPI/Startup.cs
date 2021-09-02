@@ -1,8 +1,8 @@
-using LocalAndExternalAuthAPI.Data;
-using LocalAndExternalAuthAPI.IServices;
-using LocalAndExternalAuthAPI.Models;
-using LocalAndExternalAuthAPI.Services;
-using LocalAndExternalAuthAPI.Settings;
+using AuthAPI.Data;
+using AuthAPI.IServices;
+using AuthAPI.Models;
+using AuthAPI.Services;
+using AuthAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,7 +16,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Text;
 
-namespace LocalAndExternalAuthAPI
+namespace AuthAPI
 {
     public class Startup
     {
@@ -74,7 +74,7 @@ namespace LocalAndExternalAuthAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LocalAndExternalAuthAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthAPI", Version = "v1" });
             });
         }
 
@@ -85,7 +85,7 @@ namespace LocalAndExternalAuthAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LocalAndExternalAuthAPI v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthAPI v1"));
             }
 
             app.UseHttpsRedirection();

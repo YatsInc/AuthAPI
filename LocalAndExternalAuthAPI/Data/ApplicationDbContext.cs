@@ -1,8 +1,8 @@
-﻿using LocalAndExternalAuthAPI.Models;
+﻿using AuthAPI.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace LocalAndExternalAuthAPI.Data
+namespace AuthAPI.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

@@ -1,9 +1,9 @@
-﻿using LocalAndExternalAuthAPI.IServices;
-using LocalAndExternalAuthAPI.Models;
+﻿using AuthAPI.IServices;
+using AuthAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace LocalAndExternalAuthAPI.Controllers
+namespace AuthAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

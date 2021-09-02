@@ -1,7 +1,7 @@
-﻿using LocalAndExternalAuthAPI.Models;
+﻿using AuthAPI.Models;
 using System.Threading.Tasks;
 
-namespace LocalAndExternalAuthAPI.IServices
+namespace AuthAPI.IServices
 {
     public interface IUserService
     {

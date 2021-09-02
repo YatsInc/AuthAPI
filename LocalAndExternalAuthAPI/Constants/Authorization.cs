@@ -1,4 +1,4 @@
-﻿namespace LocalAndExternalAuthAPI.Constants
+﻿namespace AuthAPI.Constants
 {
     public class Authorization
     {

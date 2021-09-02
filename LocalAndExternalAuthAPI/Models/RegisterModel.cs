@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LocalAndExternalAuthAPI.Models
+namespace AuthAPI.Models
 {
     public class RegisterModel
     {

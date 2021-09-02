@@ -1,5 +1,5 @@
-using LocalAndExternalAuthAPI.Data;
-using LocalAndExternalAuthAPI.Models;
+using AuthAPI.Data;
+using AuthAPI.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace LocalAndExternalAuthAPI
+namespace AuthAPI
 {
     public class Program
     {

@@ -1,6 +1,6 @@
-﻿using LocalAndExternalAuthAPI.IServices;
-using LocalAndExternalAuthAPI.Models;
-using LocalAndExternalAuthAPI.Settings;
+﻿using AuthAPI.IServices;
+using AuthAPI.Models;
+using AuthAPI.Settings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -12,7 +12,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LocalAndExternalAuthAPI.Services
+namespace AuthAPI.Services
 {
     public class TokenService : ITokenService
     {

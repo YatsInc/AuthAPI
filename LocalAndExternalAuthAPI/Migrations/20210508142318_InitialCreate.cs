@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace LocalAndExternalAuthAPI.Migrations
+namespace AuthAPI.Migrations
 {
     public partial class InitialCreate : Migration
     {
