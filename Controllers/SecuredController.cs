@@ -8,11 +8,11 @@ namespace AuthAPI.Controllers
     [ApiController]
     public class SecuredController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("GetSecuredData")]
         public IActionResult GetSecuredData() =>
             Ok("This Secured Data is available only for Authenticated Users.");
 
-        [HttpPost]
+        [HttpPost("PostSecuredData")]
         public IActionResult PostSecuredData() =>
             Ok("This Secured Data is available only for Authenticated Users.");
     }
