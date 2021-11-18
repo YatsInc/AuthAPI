@@ -13,6 +13,7 @@ public class ApplicationDbContextSeed
         await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.Admin.ToString()));
         await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.PremiumUser.ToString()));
         await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.NonPremiumUser.ToString()));
+
         //Seed Default User
         var defaultUser = new ApplicationUser
         {
