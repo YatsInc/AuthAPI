@@ -4,7 +4,6 @@ public class Authorization
 {
     public enum Roles
     {
-        SuperAdmin,
         Admin,
         PremiumUser,
         NonPremiumUser
