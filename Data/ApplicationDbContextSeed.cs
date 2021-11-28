@@ -9,7 +9,6 @@ public class ApplicationDbContextSeed
     public static async Task SeedEssentialsAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
     {
         //Seed Roles
-        await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.SuperAdmin.ToString()));
         await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.Admin.ToString()));
         await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.PremiumUser.ToString()));
         await roleManager.CreateAsync(new IdentityRole(Authorization.Roles.NonPremiumUser.ToString()));

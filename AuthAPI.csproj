@@ -26,13 +26,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.0" />
-    <PackageReference Include="OpenIddict" Version="3.1.1" />
-    <PackageReference Include="OpenIddict.AspNetCore" Version="3.1.1" />
-    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="3.1.1" />
-    <PackageReference Include="OpenIddict.Quartz" Version="3.1.1" />
-    <PackageReference Include="OpenIddict.Server.AspNetCore" Version="3.1.1" />
-    <PackageReference Include="Quartz.AspNetCore" Version="3.3.3" />
-    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
