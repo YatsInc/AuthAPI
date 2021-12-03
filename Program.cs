@@ -1,3 +1,4 @@
+using AuthAPI;
 using AuthAPI.Data;
 using AuthAPI.Models;
 using Microsoft.AspNetCore.Identity;
@@ -32,6 +33,15 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddHttpClient();
+
+builder.Services.AddIdentityServer()
+    .AddInMemoryClients(Configuration.GetClients())
+    .AddInMemoryApiResources(Configuration.GetApiResources())
+    .AddInMemoryApiScopes(Configuration.GetApiScopes())
+    .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
+    .AddDeveloperSigningCredential();
+
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -52,6 +62,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseIdentityServer();
 
 app.MapControllers();
 
