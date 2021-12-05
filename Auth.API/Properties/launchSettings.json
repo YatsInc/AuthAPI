@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "AuthAPI": {
+    "Auth.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

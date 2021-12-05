@@ -1,10 +1,9 @@
-﻿namespace AuthAPI.Constants;
+﻿namespace Auth.API.Constants;
 
 public class Authorization
 {
     public enum Roles
     {
-        SuperAdmin,
         Admin,
         PremiumUser,
         NonPremiumUser
