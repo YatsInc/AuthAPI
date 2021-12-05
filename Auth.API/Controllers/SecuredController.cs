@@ -19,6 +19,26 @@ public class SecuredController : ControllerBase
         _httpClientFactory = httpClientFactory;
     }
 
+    [HttpGet("GetToken")]
+    public async Task<IActionResult> GetToken()
+    {
+        var discoveryClient = _httpClientFactory.CreateClient();
+        var discoveryDocument = await discoveryClient.GetDiscoveryDocumentAsync("https://localhost:44307/");
+
+        var tokenResponse = await discoveryClient.RequestClientCredentialsTokenAsync(
+            new ClientCredentialsTokenRequest
+            {
+                Address = discoveryDocument.TokenEndpoint,
+
+                ClientId = "client_id",
+                ClientSecret = "client_secret",
+
+                Scope = "SecretApi"
+            });
+
+        return Ok(tokenResponse);
+    }
+
     [HttpGet("GetSecuredData")]
     public async Task<IActionResult> GetSecuredData()
     {
