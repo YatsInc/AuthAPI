@@ -1,7 +1,7 @@
 ﻿using Duende.IdentityServer.Models;
 using IdentityModel;
 
-namespace AuthAPI;
+namespace Auth.API;
 public static class Configuration
 {
     public static IEnumerable<Client> GetClients() =>

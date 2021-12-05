@@ -1,6 +1,6 @@
-using AuthAPI;
-using AuthAPI.Data;
-using AuthAPI.Models;
+using Auth.API;
+using Auth.API.Data;
+using Auth.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

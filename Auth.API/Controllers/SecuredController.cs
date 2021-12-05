@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace AuthAPI.Controllers;
+namespace Auth.API.Controllers;
 
 //[Authorize]
 [Route("api/[controller]")]
@@ -70,8 +70,4 @@ public class SecuredController : ControllerBase
 
         return new OkObjectResult(result);
     }
-
-    [HttpPost("PostSecuredData")]
-    public IActionResult PostSecuredData() =>
-        Ok("This Secured Data is available only for Authenticated Users.");
 }

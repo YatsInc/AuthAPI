@@ -1,8 +1,8 @@
-﻿using AuthAPI.Constants;
-using AuthAPI.Models;
+﻿using Auth.API.Constants;
+using Auth.API.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace AuthAPI.Data;
+namespace Auth.API.Data;
 
 public class ApplicationDbContextSeed
 {
